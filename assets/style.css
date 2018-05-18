@@ -1,0 +1,30 @@
+.container {
+  align-content: center;
+  border-style: solid;
+  border-width: 1px;
+  width: 80%;
+}
+
+h2 {
+  text-align: center;
+  background-color: brown;
+  color: floralwhite;
+  border-style: solid;
+  border-width: 1px;
+}
+
+h1 {
+  text-align: center;
+  background-color: brown;
+  color: floralwhite;
+  border-style: solid;
+  border-width: 1px;
+}
+
+#form {
+  border-style: solid;
+  border-width: 1px;
+  width: 80%;
+  align-items: center;
+  margin: auto;
+}

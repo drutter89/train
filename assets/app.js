@@ -15,7 +15,7 @@ var frequency = "";
 var nextArrival = "";
 var minAway = "";
 var databaseTrain = firebase.database();
-var moment = moment().format();
+var moment = moment().format("HH:mm");
 
 $(function () {
   console.log("ready!");
@@ -49,6 +49,7 @@ $(function () {
 
   databaseTrain.ref().on("value", function (snapshot) {
 
+      $("#name").text(snapshot.val().database);
 
 
       // Change the HTML to reflect
@@ -63,7 +64,10 @@ $(function () {
 
   function getTrains() {
 
-    var ref = database().ref("dinosaurs");
-
+    var ref = databaseTrain().ref("minAway");
+    moment().format('HH:mm');
   }
+
+
+
 });

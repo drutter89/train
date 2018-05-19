@@ -42,14 +42,13 @@ $(function () {
       nextArrival: nextArrival,
       minAway: minAway
     });
+
   });
 
 
   // Firebase watcher + initial loader HINT: .on("value")
 
   databaseTrain.ref().on("value", function (snapshot) {
-
-      $("#name").text(snapshot.val().database);
 
 
       // Change the HTML to reflect
@@ -64,7 +63,8 @@ $(function () {
 
   function getTrains() {
 
-    var ref = databaseTrain().ref("minAway");
+    var ref = databaseTrain().ref("#minAway");
+    $("minAway").text(minAway);
     moment().format('HH:mm');
   }
 

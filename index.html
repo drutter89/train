@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/style.css">
   <link rel="stylesheet" href="assets/app.js">
-  <script src="https://www.gstatic.com/firebasejs/5.0.2/firebase.js"></script>
+
 </head>
 
 <body>
@@ -69,92 +69,33 @@
   </div>
 
   <form id="form" action="/action_page.php">
-    <div id="name" class="form-group">
+    <div class="form-group">
       <label for="text">Train Name:</label>
-      <input type="text" class="form-control" id="text">
+      <input type="text" class="form-control" id="name">
     </div>
-    <div id="destination" class="form-group">
+    <div class="form-group">
       <label for="text">Destination:</label>
-      <input type="text" class="form-control" id="text">
+      <input type="text" class="form-control" id="destination">
     </div>
-    <div id="frequency" class="form-group">
+    <div class="form-group">
       <label for="text">First train time (HH:mm - military time):</label>
-      <input type="text" class="form-control" id="text">
+      <input type="text" class="form-control" id="frequency">
     </div>
-    <div id="nextArrival" class="form-group">
+    <div class="form-group">
       <label for="text">Frequency (mins):</label>
-      <input type="text" class="form-control" id="text">
+      <input type="text" class="form-control" id="nextArrival">
     </div>
 
     <button id="trainBtn" type="submit" class="btn btn-default">Submit</button>
   </form>
-
+  <!-- Link to Moment.js should go here -->
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase.js"></script>
-  <script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+  <script type="text/javascript" src="assets/app.js">
     // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyBeVtM3uiHHsrljxxPLhW6WcM2Mb6Mz4ak",
-      authDomain: "train-d3564.firebaseapp.com",
-      databaseURL: "https://train-d3564.firebaseio.com",
-      projectId: "train-d3564",
-      storageBucket: "",
-      messagingSenderId: "166738016174"
-    };
-    firebase.initializeApp(config);
-
-    // Initial Values
-    var name = "";
-    var destination = "";
-    var frequency = "";
-    var nextArrival = "";
-    var minAway = "";
-
-
-    // Capture Button Click
-    addTrain = $("#trainBtn").on("click", function (event) {
-      event.preventDefault();
-
-      // Grabbed values from text-boxes
-      name = $("#name-input").val().trim();
-      destination = $("#destination-input").val().trim();
-      frequency = $("#frequency-input").val().trim();
-      nextArrival = $("#nextArrival-input").val().trim();
-      minAway = $("#minAway-input").val().trim();
-
-
-      // Code for "Setting values in the database"
-      database.ref().push({
-        name: name,
-        destination: destination,
-        frequency: frequency,
-        nextArrival: nextArrival,
-        minAway: minAway
-      });
-
-    });
-
-    // Firebase watcher + initial loader HINT: .on("value")
-    database.ref().on("value", function (snapshot) {
-
-      // Log everything that's coming out of snapshot
-      console.log(snapshot.val());
-      console.log(snapshot.val().name);
-      console.log(snapshot.val().email);
-      console.log(snapshot.val().age);
-      console.log(snapshot.val().comment);
-
-      // Change the HTML to reflect
-      $("#name-display").text(snapshot.val().name);
-      $("#destination-display").text(snapshot.val().destination);
-      $("#frequency-display").text(snapshot.val().frequency);
-      $("#nextArrival-display").text(snapshot.val().nextArrival);
-      $("#minAway-display").text(snapshot.val().minAway);
-
-
-      // Handle the errors
-    }, function (errorObject) {
-      console.log("Errors handled: " + errorObject.code);
-    });
   </script>
 
 </body>

@@ -42,7 +42,8 @@ $(function () {
       nextArrival: nextArrival,
       minAway: minAway
     });
-
+    var nameInput = "#name-input";
+    var destinationInput = "#destination-input";
   });
 
 

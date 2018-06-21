@@ -9,15 +9,14 @@
 
 // Initialize Firebase
 var config = {
-  apiKey: "AIzaSyCcPFcbAjIsgXGQwE-A3AcOXkeD40qypE8",
-  authDomain: "train-times-93583.firebaseapp.com",
-  databaseURL: "https://train-times-93583.firebaseio.com",
-  storageBucket: "train-times-93583.appspot.com"
+  apiKey: "AIzaSyBeVtM3uiHHsrljxxPLhW6WcM2Mb6Mz4ak",
+  authDomain: "train-d3564.firebaseapp.com",
+  databaseURL: "https://train-d3564.firebaseio.com",
+  projectId: "train-d3564",
+  storageBucket: "train-d3564.appspot.com",
+  messagingSenderId: "166738016174"
 };
-
 firebase.initializeApp(config);
-
-var trainData = firebase.database();
 
 // 2. Populate Firebase Database with initial data (in this case, I did this via Firebase GUI)
 // 3. Button for adding trains

@@ -49,7 +49,7 @@ $("#add-train-btn").on("click", function () {
   console.log(newTrain.frequency);
 
   // Alert
-  alert("Train successfully added");
+  return alert("Train successfully added");
 
   // Clears all of the text-boxes
   $("#train-name-input").val("");
